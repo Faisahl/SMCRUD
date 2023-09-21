@@ -1,6 +1,21 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const db = require("./models");
+const controller = require("./controllers/post.controller");
+
+const run = async () => {
+    const p1 = await controller.createPost({
+        name: "alex",
+        title: "post title",
+        text: "post text",
+        published: true,
+        numberOfLikes: 0,
+        numberOfDislikes: 0,
+        // userLikedArray: [],
+        // userDislikedArray: []
+    })
+};
 
 const app = express();
 
@@ -9,17 +24,18 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./models");
-db.sequelize.sync() // { force:true }
+
+db.sequelize.sync({ force: true }) // { force:true }
     .then(() => {
         console.log("db synced")
+        run();
     })
     .catch((err) => {
         console.log("db sync failed" + err);
     })
 
 app.get("/", (req,res) => {
-    res.json("welcome")
+    res.send("welcome")
 })
 
 const PORT = process.env.PORT || 8080;

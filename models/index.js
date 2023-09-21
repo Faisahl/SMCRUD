@@ -28,8 +28,8 @@ db.comments = require("./comment.model")(sequelize,Sequelize);
 
 db.posts.hasMany(db.comments, { as: "comments" });
 db.comments.belongsTo(db.posts, {
-    foreignKey: "postID",
-    as: "tutorial"
+    foreignKey: "postId",
+    as: "post"
 });
 
 module.exports = db;

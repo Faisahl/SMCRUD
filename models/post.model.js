@@ -1,5 +1,7 @@
-module.exports = (seqeuelize, Sequelize) => {
-    const Post = seqeuelize.define("post", {
+const { DataTypes } = require("sequelize");
+
+module.exports = (sequelize, Sequelize) => {
+    const Post = sequelize.define("post", {
         postID: {
             type: Sequelize.UUID
         },
@@ -21,12 +23,12 @@ module.exports = (seqeuelize, Sequelize) => {
         numberOfDislikes: {
             type: Sequelize.INTEGER
         },
-        userLikedArray: {
-            type: Sequelize.ARRAY(Sequelize.String)
-        },
-        userDislikedArray: {
-            type: Sequelize.ARRAY(Sequelize.String)
-        }    
+        // userLikedArray: {
+        //     type: Sequelize.ARRAY(Sequelize.String)
+        // },
+        // userDislikedArray: {
+        //     type: Sequelize.ARRAY(Sequelize.String)
+        // }
     })
     return Post;
 }
