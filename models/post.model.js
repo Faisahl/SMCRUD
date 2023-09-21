@@ -14,15 +14,15 @@ module.exports = (sequelize, Sequelize) => {
         text: {
             type: Sequelize.STRING
         },
-        published: {
-            type: Sequelize.BOOLEAN
-        },
-        numberOfLikes: {
-            type: Sequelize.INTEGER
-        },
-        numberOfDislikes: {
-            type: Sequelize.INTEGER
-        },
+        // published: {
+        //     type: Sequelize.BOOLEAN
+        // },
+        // numberOfLikes: {
+        //     type: Sequelize.INTEGER
+        // },
+        // numberOfDislikes: {
+        //     type: Sequelize.INTEGER
+        // },
         // userLikedArray: {
         //     type: Sequelize.ARRAY(Sequelize.String)
         // },

@@ -9,9 +9,19 @@ const run = async () => {
         name: "alex",
         title: "post title",
         text: "post text",
-        published: true,
-        numberOfLikes: 0,
-        numberOfDislikes: 0,
+        // published: true,
+        // numberOfLikes: 0,
+        // numberOfDislikes: 0,
+        // userLikedArray: [],
+        // userDislikedArray: []
+    })
+    const p2 = await controller.createPost({
+        name: "mara",
+        title: "post title",
+        text: "post text",
+        // published: true,
+        // numberOfLikes: 0,
+        // numberOfDislikes: 0,
         // userLikedArray: [],
         // userDislikedArray: []
     })
@@ -19,8 +29,11 @@ const run = async () => {
 
 const app = express();
 
-// app.use(cors(corsOpti))
+var corsOptions = {
+    origin: "http://localhost:8081"
+};
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

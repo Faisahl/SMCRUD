@@ -7,9 +7,9 @@ exports.createPost = (post) => {
         name: post.name,
         title: post.title,
         text: post.title,
-        published: post.published,
-        numberOfLikes: 0,
-        numberOfDislikes: 0,
+        // published: post.published,
+        // numberOfLikes: 0,
+        // numberOfDislikes: 0,
         // userLikedArray: [],
         // userDislikedArray: []
     })
